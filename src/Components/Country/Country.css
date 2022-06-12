@@ -1,0 +1,19 @@
+.country {
+    border: 2px solid green;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.button {
+    background-color: green;
+    padding: 10px;
+
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn {
+    font-weight: bold;
+    background-color: blanchedalmond;
+}

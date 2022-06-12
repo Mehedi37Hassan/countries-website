@@ -1,0 +1,29 @@
+import React, { useEffect, useState } from 'react';
+import Country from '../Country/Country';
+import './Countries.css';
+const Countries = () => {
+    const [countries, setCountries] = useState([]);
+    useEffect(() => {
+        fetch('https://restcountries.com/v2/all')
+            .then(res => res.json())
+            .then(data => setCountries(data));
+    }, [])
+    return (
+        <div>
+            <div className="header">
+                <h1>Insallah, I will visit all Country...</h1>
+                <h2>Availble country: {countries.length}</h2>
+            </div>
+            <div className="countries bg-success">
+                {
+                    countries.map(country => <Country
+                        country={country}
+                        key={country.numericCode}
+                    ></Country>)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default Countries;
